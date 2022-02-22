@@ -1,0 +1,17 @@
+{
+  "name": "backend-api-rest-nomina",
+  "version": "1.0.0",
+  "description": "api rest de nomina",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Vera",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
