@@ -1,7 +1,7 @@
 // importar router
 import { Router } from "express";
 import { getCargos } from "../controllers/cargo.controller";
-import { connect } from "../database";
+//import { connect } from "../database";
 // instanciar router - ruteador
 const router = Router();
 // crear rutas de cargos
