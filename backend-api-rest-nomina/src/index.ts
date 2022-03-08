@@ -19,7 +19,7 @@
 // app.listen(3000,() => {
 //     console.log("Servidor ejecutando en el puerto 3000");
 // })
-import {App} from './servidor'
+import {App} from './componentes/servidor'
 
 const main = async () => {
   const app = new App();

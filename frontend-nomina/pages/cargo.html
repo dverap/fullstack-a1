@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/header.css">
      <link rel="stylesheet" href="../css/formulario.css">
+     <script defer src="../js/cargo/cargo.js" type="module" ></script>
     <title>Cargo</title>
 </head>
 <body>
@@ -32,7 +33,7 @@
       <div class="form-header">
         <h2>Formulario de Cargos</h2>
       </div>
-      <form id="user-form" class="form">
+      <form id="form-cargo" class="form">
         <div class="form-group">
           <label for="nombre">Descripcion</label>
           <input
@@ -56,26 +57,37 @@
           type="submit"
           name="enviar"
         >
-          Grabar
+          Insertar
         </button>
        
       </form>
        <div class="consulta none table-responsive" id="consulta">
             <h3>Listado de Cargos</h3>
           <table class="consulta-est" id="consulta-est" border="1">
-            
             <thead>
+              <tr>
                 <th>#</th>
                 <th>Descripcion</th>
                 <th>Estado</th>
-                
-              </thead>
-              <tbody class="detalle-est" id="detalle-est">
-              
+                <th>Acciones</th>
+              </tr>  
+            </thead>
+            <tbody class="detalle-est" id="detalle-cargos">
+              <!-- <tr>
+                <td>1</td>
+                <td>Analista</td>
+                <td>Activo</td>
+                <td>
+                  <button>✏️</button>
+                  <button>❌</button>
+                </td>
+              </tr>
+          
             </tbody>
           </table>
        </div>    
     </section>
   </main>
+
 </body>
 </html>

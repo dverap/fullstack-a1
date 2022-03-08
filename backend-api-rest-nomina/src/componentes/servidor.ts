@@ -1,7 +1,8 @@
 import express, { Request,Response,Application } from "express";
-import { IApp } from "./interface/Iservidor";
+import { IApp } from "../interface/Iservidor";
 import morgan from "morgan";
-import routerCargo from "./routes/cargo.routes";
+import routerCargo from "../routes/cargo.routes";
+import routerPrincipal from "../routes/principal";
 
 export class App implements IApp {
   public app: Application;
@@ -24,14 +25,16 @@ export class App implements IApp {
     this.app.use(express.urlencoded({ extended: true }));
     // recibe datos como json(no de formularios)
     this.app.use(express.json({ type: "*/*" }));
-    ///this.app.use(cors());
+    //this.app.use(cors());
   }
 
   routes() {
-    this.app.get("/",(req: Request,res: Response) => {
-       res.send("Bienvenidos a mi app")
-    })
+    // this.app.get("/",(req: Request,res: Response) => {
+    //    res.send("Bienvenidos a mi app")
+    // })
+    this.app.use(routerPrincipal)
     this.app.use("/cargos", routerCargo);
+   
   }
 
   async listen(): Promise<void> {
