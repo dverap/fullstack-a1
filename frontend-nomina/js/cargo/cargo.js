@@ -6,7 +6,7 @@ const $formCargo = d.getElementById("form-cargo");
 
 d.addEventListener("DOMContentLoaded", serCargo.obtenerCargos());
 // delegacion de eventos
-d.addEventListener("click", (e) => {
+d.addEventListener("click", async (e) => {
   console.log(e.target);
   if (e.target.matches("#enviar")) {
     //alert("has hecho click")
@@ -18,12 +18,14 @@ d.addEventListener("click", (e) => {
     } else {
       if (serCargo.grabar) {
         let id = Date.now();
-        const cargo = { id, descripcion: $descrip, estado: $estado };
-        serCargo.insertarDatos(cargo);
+        const cargo = { descripcion: $descrip, estado: $estado };
+        const cargoJson = JSON.stringify(cargo);
+        const res = await serCargo.insertarDatos(cargoJson);
       } else {
         let id = serCargo.id;
-        const cargo = { id, descripcion: $descrip, estado: $estado };
-        serCargo.modificarDatos(cargo, serCargo.id);
+        const cargo = { descripcion: $descrip, estado: $estado };
+        const cargoModJson = JSON.stringify(cargo);
+        const res = await serCargo.modificarDatos(cargoModJson, serCargo.id);
       }
       $formCargo.reset();
     }

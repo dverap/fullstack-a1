@@ -10,7 +10,7 @@ router.route("/")
     .post(createCargo);
 
 // rutas de cargos con un id "/:cargoId"
-router.route("/:cargoId")
+router.route("/:cargoId")  
     .get(getCargo)
     .delete(deleteCargo)
     .put(updateCargo)
